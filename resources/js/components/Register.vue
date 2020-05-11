@@ -67,7 +67,7 @@ Vue.component(AlertError.name, AlertError)
         },
         methods:{
             register(){
-                this.form.post('/api/register')
+                axios.post('/api/register')
                     .then((response)=>{
                        this.$router.push('/login')
                         Toast.fire({

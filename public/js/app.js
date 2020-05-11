@@ -2100,7 +2100,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(vform__WEBPACK_IMPORTED_MOD
     register: function register() {
       var _this = this;
 
-      this.form.post('/api/register').then(function (response) {
+      axios.post('/api/register').then(function (response) {
         _this.$router.push('/login');
 
         Toast.fire({

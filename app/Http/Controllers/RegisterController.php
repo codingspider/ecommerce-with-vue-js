@@ -10,18 +10,7 @@ class RegisterController extends Controller
 {
     public function register(Request $request)
     {
-        $v = $this->validate($request, [
-            'name' => 'required|min:3',
-            'email' => 'required|email|unique:users',
-            'password'  => 'required|min:3|confirmed',
-        ]);
-
-        if ($v->fails()) {
-            return response()->json([
-                'status' => 'error',
-                'errors' => $v->errors()
-            ], 422);
-        }
+        
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
