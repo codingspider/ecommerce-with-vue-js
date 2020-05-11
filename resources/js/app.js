@@ -9,6 +9,20 @@ import {initialize} from './helpers/general';
 import StoreData from './store';
 import BootstrapVue from 'bootstrap-vue';
 
+// Sweet alert 2
+import Swal from 'sweetalert2'
+window.Swal = Swal
+
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+
+window.Toast = Toast
+
 Vue.use(BootstrapVue)
 Vue.use(VueRouter);
 Vue.use(Vuex);
